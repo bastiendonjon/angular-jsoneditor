@@ -1,0 +1,14 @@
+{
+  "name": "angular-jsoneditor",
+  "version": "1.0.0",
+  "main": "angular-jsoneditor.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "angular": ">=1.0.6",
+    "jsoneditor": "~3.1.2"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "angular-jsoneditor",
+  "version": "1.0.0",
+  "description": "JsonEditor module for AngularJS",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "JSON",
+    "highlight",
+    "treeview",
+    "editor"
+  ],
+  "homepage": "https://github.com/bastiendonjon/angular-jsoneditor",
+  "main": "angular-jsoneditor",
+  "bugs": "https://github.com/bastiendonjon/angular-jsoneditor/issues",
+  "license" : "MIT",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/bastiendonjon/angular-jsoneditor"
+  },
+  "author": {
+    "name" : "Bastien Donjon",
+    "email" : "contact@bastien-donjon.fr",
+    "url" : "http://bastien-donjon.fr"
+  },
+  "files": [
+    "angular-jsoneditor.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": ">=1.0.6",
+    "jsoneditor": "~3.1.2"
+  }
+}

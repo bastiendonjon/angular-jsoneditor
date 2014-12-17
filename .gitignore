@@ -1,0 +1,13 @@
+node_modules
+dist
+.tmp
+.sass-cache
+npm-debug.log
+temp
+bower_components
+
+.idea
+jshint.xml
+.vagrant
+
+.gitignore
