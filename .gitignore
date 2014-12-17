@@ -9,5 +9,3 @@ bower_components
 .idea
 jshint.xml
 .vagrant
-
-.gitignore

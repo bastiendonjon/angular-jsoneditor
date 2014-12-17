@@ -1,4 +1,4 @@
 angular-jsoneditor
 ==================
 
-Jsoneditor module for Angular
+Jsoneditor module for AngularJS
