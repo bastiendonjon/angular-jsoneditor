@@ -9,6 +9,7 @@
   'use strict';
 
   angular.module('ngJsonEditor', [])
+
     .directive('jsoneditor', directive);
 
   /**
