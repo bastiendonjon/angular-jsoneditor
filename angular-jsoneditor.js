@@ -13,27 +13,9 @@
     .directive('jsoneditor', directive);
 
   /**
-   * @returns {{scope: {}, restrict: string, transclude: boolean, link: link}}
+   * @returns {}
    */
   function directive() {
-
-    function link(scope, element, attrs) {
-      var editor,
-        defaultOptions = {
-          mode: 'form',
-          editable: false
-        },
-        options = angular.extend(defaultOptions, scope.options);
-
-      editor = new JSONEditor(element[0], options);
-      scope.$watch(
-        'json',
-        function (newValue, oldValue) {
-          editor.set(newValue);
-        }
-      );
-    }
-
     return {
       scope: {
         options: '=',
@@ -41,7 +23,22 @@
       },
       restrict: 'E',
       transclude: false,
-      link: link
+      link: function(scope, element) {
+        var editor, defaultOptions = {
+            mode: 'form',
+            editable: false
+          },
+          options = angular.extend(defaultOptions, scope.options);
+
+        editor = new JSONEditor(element[0], options, scope.json);
+
+        scope.$watch(
+          'json',
+          function (newValue, oldValue) {
+            editor.set(newValue);
+          }
+        );
+      }
     };
   };
 

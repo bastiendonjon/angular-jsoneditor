@@ -46,7 +46,7 @@ Add `ngJsonEditor` to your app’s module dependencies.
         'ngJsonEditor'
       ]);
       
-as class
+as element
 
     <jsoneditor options="jsoneditorOptions" json="json"></jsoneditor>
     
