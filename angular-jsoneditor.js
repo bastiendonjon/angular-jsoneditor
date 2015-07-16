@@ -4,42 +4,50 @@
  * License: MIT
  */
 
-(function(window, angular) {
+(function (window, angular) {
 
-  'use strict';
+    'use strict';
 
-  angular.module('ngJsonEditor', [])
+    angular.module('ngJsonEditor', [])
 
-    .directive('jsoneditor', directive);
+        .directive('jsoneditor', directive);
 
-  /**
-   * @returns {}
-   */
-  function directive() {
-    return {
-      scope: {
-        options: '=',
-        json: '='
-      },
-      restrict: 'E',
-      transclude: false,
-      link: function(scope, element) {
-        var editor, defaultOptions = {
-            mode: 'form',
-            editable: false
-          },
-          options = angular.extend(defaultOptions, scope.options);
+    /**
+     * @returns {}
+     */
+    function directive() {
+        return {
+            scope: {
+                options: '=',
+                json: '='
+            },
+            restrict: 'E',
+            transclude: false,
+            link: function (scope, element) {
+                var editor = null, defaultOptions = {
+                        mode: 'form',
+                        editable: false
+                    },
+                    options = angular.extend(defaultOptions, scope.options);
 
-        editor = new JSONEditor(element[0], options, scope.json);
+                if(typeof(scope.options.change) === 'function'){
+                    options.change = function(){
+                        if(editor !== null){
+                            scope.options.change(editor.getText());
+                        }
+                    }
+                }
 
-        scope.$watch(
-          'json',
-          function (newValue, oldValue) {
-            editor.set(newValue);
-          }
-        );
-      }
+                editor = new JSONEditor(element[0], options, scope.json);
+
+                scope.$watch(
+                    'json',
+                    function (newValue, oldValue) {
+                        editor.set(newValue);
+                    }
+                );
+            }
+        };
     };
-  };
 
 })(window, angular);
