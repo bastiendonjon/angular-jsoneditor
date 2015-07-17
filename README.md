@@ -67,5 +67,9 @@ in controller
       "name": 'Products'
     };
 
+### API
 
-
+*Forked Options:*
+- `{function} change`  
+    Set a callback method triggered when the contents of the JSONEditor change. Called with parameter. Will only be triggered on changes made by the user, not in case of programmatic changes via the functions `set` or `setText`.
+    Parameter return new json value.
