@@ -69,6 +69,8 @@ in controller
 
 ### API
 
+[Full options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md).
+
 *Forked Options:*
 - `{function} change`  
     Set a callback method triggered when the contents of the JSONEditor change. Called with parameter. Will only be triggered on changes made by the user, not in case of programmatic changes via the functions `set` or `setText`.
