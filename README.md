@@ -35,7 +35,7 @@ with npm:
 
 with bower:
 
-    bower install jsoneditor
+    bower install angular-jsoneditor
     
 ### Usage (directive)
 
